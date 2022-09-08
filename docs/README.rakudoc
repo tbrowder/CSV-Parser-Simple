@@ -14,7 +14,9 @@ use Text::CSV::Simple;
 
 =head1 DESCRIPTION
 
-Text::CSV::Simple is ...
+B<Text::CSV::Simple> is a very simple CSV file reader which is not very robust. It is
+intended as a makeshift CSV file reader for my use until module B<Text::CSV::LibCSV>
+can be made to test successfully with B<Github worklflows>.
 
 =head1 AUTHOR
 

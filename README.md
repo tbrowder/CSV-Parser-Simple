@@ -15,7 +15,7 @@ use Text::CSV::Simple;
 DESCRIPTION
 ===========
 
-Text::CSV::Simple is ...
+**Text::CSV::Simple** is a very simple CSV file reader which is not very robust. It is intended as a makeshift CSV file reader for my use until module **Text::CSV::LibCSV** can be made to test successfully with **Github worklflows**.
 
 AUTHOR
 ======
