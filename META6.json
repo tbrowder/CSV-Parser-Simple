@@ -7,7 +7,7 @@
   ],
   "depends": [
   ],
-  "description": "blah blah blah",
+  "description": "A simple CSV file reader",
   "license": "Artistic-2.0",
   "name": "Text::CSV::Simple",
   "perl": "6.d",
@@ -16,10 +16,12 @@
   },
   "resources": [
   ],
-  "source-url": "",
+  "source-url": "https://github.com/tbrowder/Text-CSV-Simple.git",
   "tags": [
+    "text csv file read reader"
   ],
   "test-depends": [
+    "Text::Utils"
   ],
   "version": "0.0.1"
 }
