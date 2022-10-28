@@ -6,6 +6,7 @@
   "build-depends": [
   ],
   "depends": [
+    "Text::Utils"
   ],
   "description": "A simple CSV file reader",
   "license": "Artistic-2.0",
@@ -21,7 +22,6 @@
     "text csv file read reader"
   ],
   "test-depends": [
-    "Text::Utils"
   ],
   "version": "0.0.1"
 }
