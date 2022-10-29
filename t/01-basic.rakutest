@@ -1,5 +1,5 @@
 use Test;
-use Text::CSV::Simple;
+use CSV::Parser::Simple;
 
 pass "replace me";
 
