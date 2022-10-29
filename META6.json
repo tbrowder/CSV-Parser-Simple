@@ -10,14 +10,14 @@
   ],
   "description": "A simple CSV file reader",
   "license": "Artistic-2.0",
-  "name": "Text::CSV::Simple",
+  "name": "CSV::Parser::Simple",
   "perl": "6.d",
   "provides": {
-    "Text::CSV::Simple": "lib/Text/CSV/Simple.rakumod"
+    "CSV::Parser::Simple": "lib/CSV/Parser/Simple.rakumod"
   },
   "resources": [
   ],
-  "source-url": "https://github.com/tbrowder/Text-CSV-Simple.git",
+  "source-url": "https://github.com/tbrowder/CSV-Parser-Simple.git",
   "tags": [
     "text csv file read reader"
   ],
