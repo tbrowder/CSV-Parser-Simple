@@ -16,7 +16,7 @@ my $parser = CSV::Parser::Simple.new: $csv-file-name;
 DESCRIPTION
 ===========
 
-**Text::CSV::Simple** is a very simple CSV file reader and parser. It is intended as a makeshift CSV file reader for my use until modules **Text::CSV::LibCSV** can be made to test successfully with **Github workflows** as well as handle header lines with an ending empty field and data lines with trailing whitespace.
+**Text::CSV::Simple** is a very simple CSV file reader and parser. It is intended as a makeshift CSV file reader for my use until other available modules can be made to test successfully with **Github workflows** as well as handle header lines with an ending empty field and data lines with trailing whitespace.
 
 As simple as it is, it does have some features that are very useful:
 
@@ -72,7 +72,7 @@ Tom Browder <tbrowder@acm.org>
 COPYRIGHT AND LICENSE
 =====================
 
-© 2022 Tom Browder
+© 2023 Tom Browder
 
 This library is free software; you may redistribute it or modify it under the Artistic License 2.0.
 
