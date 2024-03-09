@@ -1,12 +1,14 @@
-#!/usr/bin/env raku
-
 use Test;
 use CSV::Parser::Simple;
 
 plan 1;
+my $f = 't/data/delimiters.csv';
+is $f.IO.r, True;
 
-my $outcome = 1;
-my $fh      = open 't/data/delimiters.csv', :r;
+done-testing;
+
+=finish
+
 my $parser  = CSV::Parser.new( file_handle => $fh , contains_header_row => False , field_separator => "||" , field_operator => "''" );
 my $keys    = 0;
 my %line    = %($parser.get_line());

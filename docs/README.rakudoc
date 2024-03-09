@@ -16,9 +16,12 @@ my $parser = CSV::Parser::Simple.new: $csv-file-name;
 
 B<Text::CSV::Simple> is a very simple CSV file reader and parser. It is
 intended as a makeshift CSV file reader for my use until other available 
-modules
-can be made to test successfully with B<Github workflows> as well as handle header
-lines with an ending empty field and data lines with trailing whitespace.
+modules can be made to test successfully with B<Github workflows> 
+as well as handle:
+
+=item header lines with an ending empty field
+=item data lines with trailing whitespace.
+=item normalizing field names
 
 As simple as it is, it does have some features that are very useful:
 
@@ -39,15 +42,29 @@ is trimmed and interior whitespace is collapsed to one space between words.
 This is the default behavior but can be turned off if desired (C<normalize=False>).
 =end item
 
+=begin item
+Automatic determination of separator character
+
+The header line is searched for the most-used separator
+character from this list: C<|>, C<;>, C<,>.
+=end item
+
 =head2 Limitations
 
-It cannot currently handle special characters, backslashes, non-text data, quoted words,
-named line endings, or multi-line fields.
+It cannot handle:
+
+=item files without a header line (results are untested)
+=item special characters
+=item backslashes 
+=item non-text data 
+=item quoted words
+=item named line endings 
+=item multi-line fields
 
 =head2 Constructor signature
 
 =begin code
-new($csv-file-name, :separator=',', :normalize=True, :comment-char='#')
+new($csv-file-name, :separator='auto', :normalize=True, :comment-char='#')
 =end code
 
 Following are the allowable values for the named arguments. The user is cautioned
@@ -55,11 +72,10 @@ that unspecified values are probably not tested. File an issue if your value
 of choice is not specified, and it can be added and tested for.
 
 =item C<:$separator>
-=item2 comma (C<,>) [default]
+=item2 auto [default]
+=item2 comma (C<,>) 
 =item2 pipe (C<|>)
 =item2 semicolon (C<;>)
-=item2 tab (C<\t>)
-=item2 others, including multiple characters, are possible
 
 =item C<:$normalize>
 =item2 C<True> [default]
@@ -75,7 +91,7 @@ Tom Browder <tbrowder@acm.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-© 2023 Tom Browder
+© 2024 Tom Browder
 
 This library is free software; you may redistribute it or modify it under the Artistic License 2.0.
 

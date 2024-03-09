@@ -1,9 +1,14 @@
-#!/usr/bin/env raku
-
 use Test;
 use CSV::Parser::Simple;
-plan 3;
 
+plan 1;
+
+my $f = 't/data/not-commented.csv';
+is $f.IO.r, True;
+
+done-testing;
+
+=finish
 
 {
     my $outcome = 1;

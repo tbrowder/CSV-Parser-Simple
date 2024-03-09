@@ -1,6 +1,6 @@
 use Test;
 use CSV::Parser::Simple;
 
-pass "replace me";
+use-ok "CSV::Parser::Simple";
 
 done-testing;

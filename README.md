@@ -1,4 +1,4 @@
-[![Actions Status](https://github.com/tbrowder/CSV-Parser-Simple/actions/workflows/test.yml/badge.svg)](https://github.com/tbrowder/CSV-Parser-Simple/actions)
+[![Actions Status](https://github.com/tbrowder/CSV-Parser-Simple/actions/workflows/linux.yml/badge.svg)](https://github.com/tbrowder/CSV-Parser-Simple/actions) [![Actions Status](https://github.com/tbrowder/CSV-Parser-Simple/actions/workflows/windows.yml/badge.svg)](https://github.com/tbrowder/CSV-Parser-Simple/actions) [![Actions Status](https://github.com/tbrowder/CSV-Parser-Simple/actions/workflows/macos.yml/badge.svg)](https://github.com/tbrowder/CSV-Parser-Simple/actions)
 
 NAME
 ====
@@ -16,7 +16,13 @@ my $parser = CSV::Parser::Simple.new: $csv-file-name;
 DESCRIPTION
 ===========
 
-**Text::CSV::Simple** is a very simple CSV file reader and parser. It is intended as a makeshift CSV file reader for my use until other available modules can be made to test successfully with **Github workflows** as well as handle header lines with an ending empty field and data lines with trailing whitespace.
+**Text::CSV::Simple** is a very simple CSV file reader and parser. It is intended as a makeshift CSV file reader for my use until other available modules can be made to test successfully with **Github workflows** as well as handle:
+
+  * header lines with an ending empty field
+
+  * data lines with trailing whitespace.
+
+  * normalizing field names
 
 As simple as it is, it does have some features that are very useful:
 
@@ -28,29 +34,45 @@ As simple as it is, it does have some features that are very useful:
 
     Its results are to normalize text in a field, that is: leading and trailing whitespace is trimmed and interior whitespace is collapsed to one space between words. This is the default behavior but can be turned off if desired (`normalize=False`).
 
+  * Automatic determination of separator character
+
+    The header line is searched for the most-used separator character from this list: `|`, `;`, `,`.
+
 Limitations
 -----------
 
-It cannot currently handle special characters, backslashes, non-text data, quoted words, named line endings, or multi-line fields.
+It cannot handle:
+
+  * files without a header line (results are untested)
+
+  * special characters
+
+  * backslashes 
+
+  * non-text data 
+
+  * quoted words
+
+  * named line endings 
+
+  * multi-line fields
 
 Constructor signature
 ---------------------
 
-    new($csv-file-name, :separator=',', :normalize=True, :comment-char='#')
+    new($csv-file-name, :separator='auto', :normalize=True, :comment-char='#')
 
 Following are the allowable values for the named arguments. The user is cautioned that unspecified values are probably not tested. File an issue if your value of choice is not specified, and it can be added and tested for.
 
   * `:$separator`
 
-    * comma (`,`) [default]
+    * auto [default]
+
+    * comma (`,`) 
 
     * pipe (`|`)
 
     * semicolon (`;`)
-
-    * tab (`\t`)
-
-    * others, including multiple characters, are possible
 
   * `:$normalize`
 
@@ -72,7 +94,7 @@ Tom Browder <tbrowder@acm.org>
 COPYRIGHT AND LICENSE
 =====================
 
-© 2023 Tom Browder
+© 2024 Tom Browder
 
 This library is free software; you may redistribute it or modify it under the Artistic License 2.0.
 
